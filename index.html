@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snuffel & Co. — Slimme gadgets voor huisdieren</title>
+<meta name="description" content="Handige, geteste gadgets voor honden en katten. Snel besteld, snel bezorgd.">
+
+<!-- ===== ADS PIXELS: plak hier je Meta / TikTok pixel code vóór launch ===== -->
+<!-- <script>!function(f,b,e,v,n,t,s){...} fbq('init','JOUW_PIXEL_ID'); fbq('track','PageView');</script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --forest: #1F2E23;
+    --forest-dark: #14201A;
+    --ivory: #F2F0E8;
+    --mustard: #D9A441;
+    --plum: #5B3A56;
+    --charcoal: #1C1C1A;
+    --line: rgba(28,28,26,0.12);
+    --radius: 14px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+
+  h1,h2,h3, .display{
+    font-family:'Fraunces', serif;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color: var(--mustard);
+    font-weight:500;
+  }
+
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background: rgba(242,240,232,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.3rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .paw{ font-size:1rem; }
+  .nav-links{ display:flex; gap:28px; font-size:0.92rem; font-weight:500; }
+  .nav-links a{ text-decoration:none; opacity:0.8; transition:opacity .15s; }
+  .nav-links a:hover{ opacity:1; }
+  .nav-cta{
+    background:var(--forest); color:var(--ivory);
+    padding:9px 18px; border-radius:100px;
+    text-decoration:none; font-size:0.88rem; font-weight:600;
+    transition: transform .15s ease;
+  }
+  .nav-cta:hover{ transform: translateY(-1px); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 76px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight:600;
+    line-height:1.06;
+    margin: 14px 0 20px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:500;
+    color: var(--plum);
+  }
+  .hero p.lead{
+    font-size:1.08rem;
+    max-width:46ch;
+    opacity:0.82;
+    margin-bottom:28px;
+  }
+  .hero-ctas{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  .btn-primary{
+    background: var(--forest);
+    color: var(--ivory);
+    padding:14px 26px;
+    border-radius:100px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    display:inline-block;
+    transition: transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 6px 18px rgba(31,46,35,0.25);
+  }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .trust-line{
+    font-size:0.82rem; opacity:0.65; font-family:'JetBrains Mono',monospace;
+  }
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio: 4/5;
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(217,164,65,0.35), transparent 55%),
+      linear-gradient(160deg, var(--forest) 0%, var(--forest-dark) 100%);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .stamp{
+    position:absolute;
+    width:118px; height:118px;
+    border-radius:50%;
+    border:2px dashed rgba(242,240,232,0.5);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    color: var(--ivory);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.6rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    line-height:1.3;
+    top:24px; right:24px;
+    transform: rotate(8deg);
+    padding:14px;
+  }
+  .hero-visual .paw-big{
+    font-size:7rem;
+    opacity:0.9;
+  }
+
+  /* ---------- Section shared ---------- */
+  section{ padding: 64px 0; }
+  .section-head{
+    max-width: 60ch;
+    margin-bottom:40px;
+  }
+  .section-head h2{
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight:600;
+    margin-top:10px;
+  }
+  .section-head p{ opacity:0.75; margin-top:12px; font-size:1rem; }
+
+  /* ---------- Product grid ---------- */
+  .products{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:28px;
+  }
+  .card{
+    background:#fff;
+    border-radius: var(--radius);
+    border:1px solid var(--line);
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition: transform .2s ease, box-shadow .2s ease;
+    position:relative;
+  }
+  .card:nth-child(2n){ transform: rotate(-0.6deg); }
+  .card:nth-child(3n){ transform: rotate(0.5deg); }
+  .card:hover{ transform: translateY(-6px) rotate(0deg); box-shadow: 0 18px 32px rgba(28,28,26,0.1); }
+
+  .card-media{
+    aspect-ratio: 1/1;
+    background: linear-gradient(135deg, #E9E4D6, #DED6C2);
+    display:flex; align-items:center; justify-content:center;
+    font-size:3.6rem;
+    position:relative;
+  }
+  .card-seal{
+    position:absolute;
+    bottom:10px; left:10px;
+    background: var(--mustard);
+    color: var(--forest-dark);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.6rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:5px 9px;
+    border-radius: 100px;
+  }
+  .card-body{ padding:20px 20px 22px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .card-body h3{ font-size:1.15rem; font-weight:600; }
+  .card-body .desc{ font-size:0.9rem; opacity:0.72; flex:1; }
+  .card-foot{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-top:10px;
+  }
+  .price{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:500;
+    font-size:1.05rem;
+  }
+  .price .old{
+    text-decoration: line-through;
+    opacity:0.4;
+    font-size:0.8rem;
+    margin-right:6px;
+  }
+  .btn-buy{
+    background: var(--forest);
+    color: var(--ivory);
+    border:none;
+    padding:9px 16px;
+    border-radius:100px;
+    font-size:0.82rem;
+    font-weight:600;
+    cursor:pointer;
+    font-family:'Inter', sans-serif;
+    transition: background .15s ease;
+  }
+  .btn-buy:hover{ background: var(--plum); }
+
+  /* ---------- Trust strip ---------- */
+  .trust{
+    background: var(--forest);
+    color: var(--ivory);
+    padding: 40px 0;
+  }
+  .trust .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;
+  }
+  .trust-item{ font-size:0.88rem; display:flex; align-items:center; gap:10px; opacity:0.9; }
+
+  /* ---------- Footer ---------- */
+  footer{ padding:48px 0 32px; border-top:1px solid var(--line); }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  }
+  footer p{ font-size:0.82rem; opacity:0.6; }
+
+  /* ---------- Toast (fake add to cart feedback) ---------- */
+  #toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(120%);
+    background: var(--forest); color:var(--ivory);
+    padding:14px 22px; border-radius:100px;
+    font-size:0.88rem; font-weight:500;
+    transition: transform .3s ease;
+    z-index:100;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  #toast.show{ transform:translateX(-50%) translateY(0); }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; aspect-ratio:16/10; }
+    .products{ grid-template-columns: 1fr 1fr; }
+    .nav-links{ display:none; }
+  }
+  @media (max-width: 560px){
+    .products{ grid-template-columns: 1fr; }
+    .trust .wrap{ flex-direction:column; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; scroll-behavior:auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo"><span class="paw">🐾</span> Snuffel & Co.</div>
+    <div class="nav-links">
+      <a href="#producten">Producten</a>
+      <a href="#waarom">Waarom wij</a>
+      <a href="#faq">Vragen</a>
+    </div>
+    <a href="#producten" class="nav-cta">Bekijk producten</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Getest door échte huisdieren</p>
+      <h1>Gadgets die je hond of kat <em>daadwerkelijk</em> gebruikt.</h1>
+      <p class="lead">Geen rommel die na een week in de kast belandt. Wij selecteren alleen producten die de sniff-test doorstaan — praktisch, duurzaam, en de moeite van het uitpakken waard.</p>
+      <div class="hero-ctas">
+        <a href="#producten" class="btn-primary">Ontdek de collectie</a>
+        <span class="trust-line">Verzending binnen NL/BE · 30 dagen bedenktijd</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="paw-big">🐾</div>
+      <div class="stamp">Goedgekeurd<br>door Fikkie<br>& Whiskers</div>
+    </div>
+  </div>
+</section>
+
+<section id="producten">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">De collectie</p>
+      <h2>Vijf gadgets die het waard zijn</h2>
+      <p>Klein assortiment, bewust gekozen. Elk product lost een echt, herkenbaar probleem op.</p>
+    </div>
+
+    <div class="products" id="product-grid">
+      <!-- Products get rendered here by JS from PRODUCTS array -->
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-item">🚚 &nbsp;Verzending in 3–7 werkdagen</div>
+    <div class="trust-item">↩️ &nbsp;30 dagen retourrecht</div>
+    <div class="trust-item">🔒 &nbsp;Veilig betalen</div>
+    <div class="trust-item">💬 &nbsp;Nederlandstalige support</div>
+  </div>
+</section>
+
+<section id="waarom">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Waarom Snuffel & Co.</p>
+      <h2>Wij testen zodat jij niet hoeft te gokken</h2>
+      <p>Elk product in deze collectie is geselecteerd op drie dingen: lost het een écht probleem op, overleeft het de eerste week gebruik, en zou je het zelf cadeau doen? Zo niet: het staat niet in de winkel.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Veelgestelde vragen</p>
+      <h2>Kort en duidelijk</h2>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="font-size:1rem;"><span class="paw">🐾</span> Snuffel & Co.</div>
+    <p>© 2026 Snuffel & Co. — Testwinkel, gebouwd om te leren wat werkt.</p>
+  </div>
+</footer>
+
+<div id="toast">Toegevoegd — check je mail voor de link naar afrekenen</div>
+
+<script>
+  // ============================================================
+  // PRODUCT DATA
+  // Vul hier je eigen producten, prijzen en (later) checkout-links in.
+  // "buyUrl" kun je straks vervangen door een Stripe Payment Link
+  // of een link naar Zendrop/CJdropshipping checkout.
+  // ============================================================
+  const PRODUCTS = [
+    {
+      emoji: "💧",
+      seal: "Bestseller",
+      name: "Stille Drinkfontein voor Katten",
+      desc: "Filtert en circuleert continu vers water — lokt katten die weinig drinken actief naar de bak.",
+      price: "€29,95",
+      oldPrice: "€44,95",
+      buyUrl: "#"
+    },
+    {
+      emoji: "✨",
+      seal: "Nieuw",
+      name: "Oplaadbare LED-halsband",
+      desc: "USB-C oplaadbaar, 3 lichtstanden. Zichtbaar tot 200 meter tijdens avondwandelingen.",
+      price: "€19,95",
+      oldPrice: "€27,95",
+      buyUrl: "#"
+    },
+    {
+      emoji: "🪮",
+      seal: "Publieksfavoriet",
+      name: "Zelfreinigende Ontharingsborstel",
+      desc: "Eén druk op de knop en de losse haren schieten uit de borstel. Geen geknoei meer.",
+      price: "€16,95",
+      oldPrice: "€23,95",
+      buyUrl: "#"
+    },
+    {
+      emoji: "🧩",
+      seal: "Getest door Fikkie",
+      name: "Interactieve Voerpuzzel",
+      desc: "Vertraagt te snel eten en houdt slimme honden een half uur zoet zonder toezicht.",
+      price: "€14,95",
+      oldPrice: "€21,95",
+      buyUrl: "#"
+    },
+    {
+      emoji: "🎒",
+      seal: "Reis-essentieel",
+      name: "Draagbare Drinkfles + Bakje",
+      desc: "Klapt open tot een bakje, past in elke tas. Ideaal voor wandelingen en op reis.",
+      price: "€12,95",
+      oldPrice: "€18,95",
+      buyUrl: "#"
+    }
+  ];
+
+  const grid = document.getElementById('product-grid');
+
+  PRODUCTS.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-media">
+        <span>${p.emoji}</span>
+        <span class="card-seal">${p.seal}</span>
+      </div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <p class="desc">${p.desc}</p>
+        <div class="card-foot">
+          <div class="price"><span class="old">${p.oldPrice}</span>${p.price}</div>
+          <button class="btn-buy" data-url="${p.buyUrl}" data-name="${p.name}">Bestel nu</button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Fake add-to-cart feedback + hook point for real checkout / pixel events
+  const toast = document.getElementById('toast');
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-buy');
+    if (!btn) return;
+
+    // ---- Hook: fire your ad-platform "AddToCart" event here ----
+    // if (typeof fbq === 'function') fbq('track', 'AddToCart', { content_name: btn.dataset.name });
+
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2600);
+
+    // Once you have real checkout links, uncomment to redirect:
+    // window.location.href = btn.dataset.url;
+  });
+</script>
+
+</body>
+</html>
